@@ -1,0 +1,11 @@
+{
+  "name": "desafio-02",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/EduMacedoEng/Nodejs.git",
+  "author": "Eduardo Macedo <eduardomacedo.eng@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
