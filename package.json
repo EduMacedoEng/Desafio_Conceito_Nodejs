@@ -1,11 +1,19 @@
 {
   "name": "desafio-02",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
   "repository": "https://github.com/EduMacedoEng/Nodejs.git",
   "author": "Eduardo Macedo <eduardomacedo.eng@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "uuidv4": "^6.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
