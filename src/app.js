@@ -70,8 +70,4 @@ app.delete("/repositories/:id", (req, res) => {
     return res.status(202).send("Repos removed !");
 })
 
-app.listen(3334, () => {
-    console.log("Sucess !");
-})
-
 module.exports = app;
