@@ -71,8 +71,4 @@ app.delete("/repositories/:id", (req, res) => {
     
 })
 
-app.delete("/repositories/removeAll", (req, res) => {
-    
-})
-
 module.exports = app;
