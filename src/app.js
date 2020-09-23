@@ -56,14 +56,23 @@ app.put("/repositories/:id", (req, res) => {
 
 app.delete("/repositories/:id", (req, res) => {
     const {id} = req.params;
+    if (id == "removeAll"){
+        repositories.splice(0,repositories.length);
+        return res.status(204).send("Todos foram removidos !");
+    }else{
+        const reposIndex = repositories.findIndex(repos => repos.id == id);
+        if (reposIndex < 0){
+            return res.status(400).json({error: "Repos not found !"});
+        }
+        repositories.splice(reposIndex,1);
 
-    const reposIndex = repositories.findIndex(repos => repos.id == id);
-    if (reposIndex < 0){
-        return res.status(400).json({error: "Repos not found !"});
+        return res.status(204).send("O id selecionado foi removido !");
     }
-    repositories.splice(reposIndex,1);
+    
+})
 
-    return res.status(204).send("");
+app.delete("/repositories/removeAll", (req, res) => {
+    
 })
 
 module.exports = app;
