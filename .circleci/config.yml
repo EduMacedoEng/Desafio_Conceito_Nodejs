@@ -1,23 +1,7 @@
 version: 2.1
-jobs:
-  run_tests:
-    dockert:
-      - image: circle/node:10
-    steps:
-      - checkout
-      - run: 
-          name: Install npm dependencies
-          command: |
-            npm install --save
-      - run:
-          name: Run Unit Tests
-          command: |
-            ./node_modules/mocha/bin/mocha test/ --reporter mochawesome --reporter-options reportDir=test-results, reportFilename=test-results
-      - store_test_results:
-          path: test-results
-      - store_artifacts:
-          path: test-results
+orbs:
+  node: circleci/node@3.0.0
 workflows:
-  build_test:
+  node-tests:
     jobs:
-      - run_tests
+      - node/test
